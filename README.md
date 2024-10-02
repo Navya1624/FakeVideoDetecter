@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# DETAILED SOLUTION PROTOTYPE(https://1drv.ms/p/c/7d9ab76ab5cf840c/EaWO0bRyDS5IqdzljGUOs7EB8u1FNDdTmb5Yirzz-Zx1-Q?e=0sQMNZ&nav=eyJzSWQiOjI2MywiY0lkIjo1NjUxMjE4Njh9)
+
+
+ Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
