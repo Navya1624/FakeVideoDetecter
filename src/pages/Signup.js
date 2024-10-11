@@ -18,9 +18,9 @@ const Signup = () => {
 
     async function onSubmit(data) {
         console.log("submitting the form", data);
-        const response = await axios.post(`http://localhost:5000/api/auth/register`, {
-            data
-        });
+        const response = await axios.post(`http://localhost:5000/api/auth/register`, 
+                data
+        );
         console.log(response.data);
     }
     return (

@@ -11,7 +11,6 @@ router.use(express.json());
 
 
 router.post("/register", async (req, res) => {
-    console.log("navya");
     try {
         const { Username, Email, Password, Contact } = req.body;
         if (!(Username && Email && Password && Contact)) {
@@ -23,8 +22,11 @@ router.post("/register", async (req, res) => {
         if (existingUser) {
             return res.status(400).send('User already exists');
         }
+
+        console.log("Hashing password...");
         const hashedPassword = await bcrypt.hash(Password, 10);
 
+        console.log("Creating user...");
         const user = new User({
             Username,
             Email,
@@ -33,12 +35,15 @@ router.post("/register", async (req, res) => {
         });
 
         // Save the user to the database
+        console.log("Saving user to database...");
         await user.save();
         console.log("User Created: ", user);
 
         const token = jwt.sign({ id: user._id }, 'shhhh', {
             expiresIn: "2h"
         })
+
+        console.log("Generating token...");
         user.token = token;
         return res.status(201).json(user);
     }
